@@ -1,0 +1,80 @@
+config:
+  base: static/demo/
+  compress: true
+  csv:
+    columns:
+    - x
+    - y
+    - z
+    compress: true
+    delimiter: ','
+    header: 1
+  file: configuration.yaml
+  inputPath: ''
+  modelFileVtk: model.vts
+  outputPath: ''
+  shapePath: ''
+globals:
+  defaultPath: ../static/demo/
+  uploadPath: ../static/tmp/
+model:
+  3d: true
+  cellNumberX: 50
+  cellNumberY: 50
+  cellNumberZ: 50
+  cornerPoint1:
+  - 0.0
+  - 0.0
+  - 0.0
+  cornerPoint2:
+  - 5.0
+  - 0.0
+  - 0.0
+  dimension:
+  - 5.0
+  - 10.0
+  - 10.0
+  discretisationType: n
+  discretisationX:
+  - 2
+  - 1
+  - 2
+  discretisationY:
+  - 2
+  - 1
+  - 1
+  - 5
+  - 1
+  discretisationZ:
+  - 3
+  - 3
+  - 1
+  partitionId:
+    all: 0
+    fracture1: 4
+    default: 1
+    layer-1: 3
+    layer-2: 2
+  structureRank:
+    fracture1: 1
+    layer-1: 5
+    layer-2: 10
+  structureWidth:
+    fracture1: 1
+run: false
+structure:
+  extension:
+  - .csv
+  - .csv
+  - .csv
+  - .asc
+  file:
+  - fracture1.csv
+  - layer-1.csv
+  - layer-2.csv
+  - lateralmask.asc
+  type:
+  - fault
+  - layer
+  - layer
+  - mask

@@ -1,0 +1,101 @@
+{
+    "type": "object",
+    "properties": {
+        "config": {
+            "type": "object",
+            "properties" :  {
+                "compress" : {"type" : "boolean"},
+                "file" : {"type" : "string"},
+                "inputPath" : {"type" : "string"},
+                "outputPath": {"type" : "string"},
+                "shapePath": {"type" : "string"},
+                "csv" : {
+                    "type" : "object",
+                    "properties" :  {
+                        "delimiter" : {"type" : "string"},
+                        "header" : {"type" : "integer"},
+                        "columns" : {
+                            "type": "array",
+                            "prefixItems": [
+                                {"enum" : ["x","y","z"]},
+                                {"enum" : ["x","y","z"]},
+                                {"enum" : ["x","y","z",0]}
+                            ],
+                            "minItems":3,
+                            "items" : false
+                        }
+                    }
+                }
+            }
+        },
+        "model" : {
+            "type": "object",
+            "properties" :  {
+                "3d" : {"type" : "boolean"},
+                "dimension" : {
+                    "type" : "array",
+                    "prefixItems" : [
+                        {"type" : "number"},
+                        {"type" : "number"},
+                        {"type" : "number"}
+                    ],
+                    "minItems" : 3,
+                    "items" : false
+                },
+                "discretisationType" : {
+                    "type" : "string",
+                    "prefixItems" : [
+                        {"enum" : ["d", "n"]}
+                    ],
+                    "minItems" : 1,
+                    "items" : false
+                },
+                "discretisationX" : { "type" : "array", "items" : {"type" : "number"}},
+                "discretisationY" : { "type" : "array", "items" : {"type" : "number"}},
+                "discretisationZ" : { "type" : "array", "items" : {"type" : "number"}},
+                "cellNumberX" : { "type" : "number", "minimum" : 0, "maximum": 1500},
+                "cellNumberY" : { "type" : "number", "minimum" : 0, "maximum": 1500},
+                "cellNumberZ" : { "type" : "number", "minimum" : 0, "maximum": 1500},
+                "cornerPoint1" : {
+                    "type" : "array",
+                    "prefixItems" : [
+                        {"type" : "number"},
+                        {"type" : "number"},
+                        {"type" : "number"}
+                    ],
+                    "minItems" : 3,
+                    "items" : false
+                },
+                "cornerPoint2" : {
+                    "type" : "array",
+                    "prefixItems" : [
+                        {"type" : "number"},
+                        {"type" : "number"},
+                        {"type" : "number"}
+                    ],
+                    "minItems" : 3,
+                    "items" : false
+                },
+                "structureWidth" :{ "type" : "object"},
+                "structureRank" : { "type" : "object"},
+                "partitionId" : { "type" : "object"},
+                "structure" : {
+                    "type" : "object",
+                    "properties" :{
+                        "file" : {"type" : "array", "items" : {"type" : "string"}, "minItems" : 0, "maxItems": 100},
+                        "extension" : {"type" : "array", "items" : {"type" : "string"}, "minItems" : 0, "maxItems": 100},
+                        "type" : {"type" : "array", "items" : {"type" : "string"}, "minItems" : 0, "maxItems": 100}
+                    },
+                    "required" : ["file", "type"]
+                }
+            }
+        },
+        "globals" : {
+            "type": "object",
+            "properties" :  {
+                "defaultPath" : {"type" : "string"},
+                "uploadPath" : {"type" : "string"}
+            }
+        }
+    }
+}

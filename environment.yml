@@ -1,0 +1,19 @@
+name: gmlGUI
+channels:
+  - conda-forge
+dependencies:
+  - python=3.13
+  - flask
+  - gdal
+  - geos
+  - matplotlib
+  - numpy
+  - pandas
+  - pip
+  - pyevtk
+  - pyvista
+  - pyyaml
+  - scipy
+  - streamlit
+  - pip:
+      - stpyvista=1.43

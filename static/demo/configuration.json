@@ -1,0 +1,87 @@
+{
+    "config": {
+        "modelFileVtk": "model.vts",
+        "csv": {
+            "columns": [
+                "x",
+                "y",
+                "z"
+            ],
+            "delimiter": ",",
+            "header": 1,
+            "compress": true
+        },
+        "file": "configuration.json",
+        "inputPath": "",
+        "outputPath": "",
+        "shapePath": "",
+        "compress": true
+    },
+    "model": {
+        "3d": true,
+        "dimension": [
+            5.0,
+            10.0,
+            10.0
+        ],
+        "discretisationType": "n",
+        "discretisationX": [
+            2,
+            1,
+            2
+        ],
+        "discretisationY": [
+            2,
+            1,
+            1,
+            5,
+            1
+        ],
+        "discretisationZ": [
+            3,
+            3,
+            1
+        ],
+        "cellNumberX": 50,
+        "cellNumberY": 50,
+        "cellNumberZ": 50,
+        "cornerPoint1": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "cornerPoint2": [
+            5.0,
+            0.0,
+            0.0
+        ],
+        "structureRank": {
+            "fracture1": 1,
+            "layer-1": 5,
+            "layer-2": 10
+        },
+        "structureWidth": {
+            "fracture1": 1
+        }
+    },
+    "structure": {
+        "file": [
+            "fracture1.csv",
+            "layer-1.csv",
+            "layer-2.csv",
+            "lateralmask.asc"
+        ],
+        "extension": [
+            ".csv",
+            ".csv",
+            ".csv",
+            ".asc"
+        ],
+        "type": [
+            "fault",
+            "layer",
+            "layer",
+            "mask"
+        ]
+    }
+}
