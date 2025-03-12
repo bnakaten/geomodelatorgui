@@ -1,0 +1,3 @@
+[submodule "geomodelator"]
+	path = geomodelator
+	url = git@git.gfz-potsdam.de:bnakaten/geomodelator.git
