@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 Benjamin Nakaten (GFZ) <bnakaten@gfz-potsdam.de>
+# SPDX-FileCopyrightText: 2025 GFZ Helmholtz Centre for Geosciences
+#
+# SPDX-License-Identifier: GPL-3.0-only
+
 import numpy as np
 import zipfile
 import yaml
@@ -11,7 +16,7 @@ import matplotlib.pyplot as plt
 import logging
 
 import importlib
-gml = importlib.import_module("geomodelator-backend.gml")
+gml = importlib.import_module("geomodelator.gml")
 
 
 class gmlRunMapper():

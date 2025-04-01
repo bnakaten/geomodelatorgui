@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 Benjamin Nakaten (GFZ) <bnakaten@gfz-potsdam.de>
+# SPDX-FileCopyrightText: 2025 GFZ Helmholtz Centre for Geosciences
+#
+# SPDX-License-Identifier: CC0-1.0
+
 [submodule "geomodelator"]
 	path = geomodelator
 	url = git@git.gfz-potsdam.de:bnakaten/geomodelator.git
