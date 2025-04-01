@@ -1,0 +1,39 @@
+# SPDX-FileCopyrightText: 2025 Benjamin Nakaten (GFZ) <bnakaten@gfz.de>
+# SPDX-FileCopyrightText: 2025 GFZ Helmholtz Centre for Geosciences
+#
+# SPDX-License-Identifier: GPL-3.0-only
+
+version=1
+
+[[annotations]]
+path = [
+     "*.gif",
+     "images/*.gif",
+     "*.png",
+     "images/*.png",
+     "static/demo/*.json",
+     "static/demo/input/*.asc",
+     "static/demo/input/*.csv",
+     "static/demo/*.zip",
+     "static/demo/*.vtk",
+     "static/demo/*.vts",
+     "static/demo/*.npz",
+]
+precedence = "override"
+SPDX-FileCopyrightText = [
+    "2025 Benjamin Nakaten (GFZ) <bnakaten@gfz.de>",
+    "2025 GFZ Helmholtz Centre for Geosciences"
+]
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = [
+     ".gitmodules",
+     "*.json",
+]
+precedence = "override"
+SPDX-FileCopyrightText = [
+    "2025 Benjamin Nakaten (GFZ) <bnakaten@gfz.de>",
+    "2025 GFZ Helmholtz Centre for Geosciences"
+]
+SPDX-License-Identifier = "CC0-1.0"

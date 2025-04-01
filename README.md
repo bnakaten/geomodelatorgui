@@ -1,4 +1,11 @@
-[![DOI:10.5880/GFZ.3.4.2024.003](https://img.shields.io/badge/DOI-10.5880%2FGFZ.3.4.2024.003-blue.svg)](https://doi.org/10.5880/GFZ.3.4.2024.003)
+<!--
+SPDX-FileCopyrightText: 2025 Benjamin Nakaten (GFZ) <bnakaten@gfz-potsdam.de>
+SPDX-FileCopyrightText: 2025 GFZ Helmholtz Centre for Geosciences
+
+SPDX-License-Identifier: CC-BY-4.0
+-->
+
+[![DOI:10.5880/GFZ.AJPH.2025.001](https://img.shields.io/badge/DOI-10.5880%2FGFZ.AJPH.2025.001-blue.svg)](https://doi.org/10.5880/GFZ.AJPH.2025.001)
 
 
 # GeomodelatorGUI
@@ -78,3 +85,11 @@ the simulator framework [TRANSPORTSE](https://git.gfz.de/kempka/transportse).
     The GeomodelatorGUI opens in the web browser.
 
 3. Further details can be found in the [GeomodelatorGUI Wiki](https://git.gfz.de/bnakaten/geomodelator-frontend/-/wikis) or in the [GEOMODELATOR Wiki](https://git.gfz.de/bnakaten/geomodelator-backend/-/wikis)
+
+# License and Copyright
+
+Copyright 2025 GFZ Helmholtz Centre for Geosciences.
+
+The code in this repository is licensed GPL-3.0-only.
+
+For more details on the licenses, please have a look at the file headers or associated *.license files. The terms of all used licenses are located in the LICENSES directory.

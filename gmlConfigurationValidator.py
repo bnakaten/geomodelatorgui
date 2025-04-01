@@ -1,9 +1,14 @@
+# SPDX-FileCopyrightText: 2025 Benjamin Nakaten (GFZ) <bnakaten@gfz-potsdam.de>
+# SPDX-FileCopyrightText: 2025 GFZ Helmholtz Centre for Geosciences
+#
+# SPDX-License-Identifier: GPL-3.0-only
+
 import sys
 import json
 from jsonschema import Draft202012Validator
 
 import importlib
-gml = importlib.import_module("geomodelator-backend")
+gml = importlib.import_module("geomodelator")
 
 import logging
 # logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
