@@ -21,8 +21,8 @@ the simulator framework [TRANSPORTSE](https://git.gfz.de/kempka/transportse).
 
 # Requirements
 
-**GeomodelatorGUI** requires Python = 3.13 and uses the following packages:
-  - python=3.13
+**GeomodelatorGUI** requires the following packages and is restricted to those specified in environment.yml.:
+  - python
   - flask
   - gdal
   - geos
@@ -35,8 +35,7 @@ the simulator framework [TRANSPORTSE](https://git.gfz.de/kempka/transportse).
   - pyvista
   - scipy
   - streamlit
-  - pip:
-      - stpyvista=1.43
+  - stpyvista
 
 > On Debian/Ubunut install procps, libgl1-mesa-glx and xvfb for the packages pyvista and stpyvista.
 
@@ -84,7 +83,7 @@ the simulator framework [TRANSPORTSE](https://git.gfz.de/kempka/transportse).
 
     The GeomodelatorGUI opens in the web browser.
 
-3. Further details can be found in the [GeomodelatorGUI Wiki](https://git.gfz.de/bnakaten/geomodelator-frontend/-/wikis) or in the [GEOMODELATOR Wiki](https://git.gfz.de/bnakaten/geomodelator-backend/-/wikis)
+3. Further details can be found in the [GeomodelatorGUI Wiki](https://git.gfz.de/bnakaten/geomodelatorgui/-/wikis) or in the [GEOMODELATOR Wiki](https://git.gfz.de/bnakaten/geomodelator/-/wikis)
 
 # License and Copyright
 
@@ -92,4 +91,4 @@ Copyright 2025 GFZ Helmholtz Centre for Geosciences.
 
 The code in this repository is licensed GPL-3.0-only.
 
-For more details on the licenses, please have a look at the file headers or associated *.license files. The terms of all used licenses are located in the LICENSES directory.
+For detailed license information, refer to the file headers or the REUSE.toml file. All license terms are available in the LICENSES directory.
