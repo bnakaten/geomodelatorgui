@@ -5,6 +5,7 @@ SPDX-FileCopyrightText: 2025 GFZ Helmholtz Centre for Geosciences
 SPDX-License-Identifier: CC-BY-4.0
 -->
 
+[![DOI:10.5880/GFZ.AJPH.2025.002](https://img.shields.io/badge/DOI-10.5880%2FGFZ.AJPH.2025.002-blue.svg)](https://doi.org/10.5880/GFZ.AJPH.2025.002)
 [![DOI:10.5880/GFZ.AJPH.2025.001](https://img.shields.io/badge/DOI-10.5880%2FGFZ.AJPH.2025.001-blue.svg)](https://doi.org/10.5880/GFZ.AJPH.2025.001)
 
 
