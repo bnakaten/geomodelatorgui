@@ -140,10 +140,10 @@ class ModelPlotter:
 
         mesh = mesh.scale([1,1,st.session_state.zscale])
 
-        if st.session_state.hide_structure:
-            structureOpacity = 0
-        else:
+        if st.session_state.show_surface:
             structureOpacity = st.session_state.structure_opacity
+        else:
+            structureOpacity = 0
 
         return mesh, structureOpacity
 
@@ -196,10 +196,10 @@ class ModelPlotter:
 
                     i += 1
 
-        if st.session_state.hide_model:
-            modelOpacity = 0
-        else:
+        if st.session_state.show_model:
             modelOpacity = st.session_state.model_opacity
+        else:
+            modelOpacity = 0
 
         return mesh, modelOpacity
 

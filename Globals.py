@@ -169,9 +169,9 @@ class Globals():
             'descriptionLable' : 'Wireframe',
             'default' : True,
         },
-        'modelHide' : {
+        'modelShow' : {
             'descriptionLable' : 'Model',
-            'default' : False,
+            'default' : True,
         },
         'partitionTable' : {
             'columnNames' :  ['Partition', 'Id', 'Color']
@@ -191,9 +191,9 @@ class Globals():
             'descriptionLable' : 'Wireframe',
             'default' : False,
         },
-        'surfaceHide' : {
-            'descriptionLable' : 'Structure',
-            'default' : False,
+        'surfaceShow' : {
+            'descriptionLable' : 'Structures',
+            'default' : True,
         },
         'backgroundColor' :{
             'descriptionLable' : 'Background',
