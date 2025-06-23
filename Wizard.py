@@ -619,13 +619,11 @@ class SetStructureWidth(WizardPage):
         st.session_state.structureWidth['Width'] = \
             st.session_state.structureWidth['Width'].astype(float)
 
-
-        st.session_state.structureWidth.rename(columns={'Width' : 'Width (m)'}, inplace = True)
-
         st.session_state.structureWidthE = formSubDetailsA.data_editor(
             st.session_state.structureWidth,
             column_config={
                 "Name": st.column_config.Column(disabled=True),
+                "Width" : "Width (m)",
                 "color": None,
             },
             hide_index = True,
