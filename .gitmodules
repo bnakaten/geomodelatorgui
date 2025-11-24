@@ -5,4 +5,4 @@
 
 [submodule "geomodelator"]
 	path = geomodelator
-	url = git@git.gfz-potsdam.de:bnakaten/geomodelator.git
+	url = git@github.com:bnakaten/geomodelator.git
