@@ -17,7 +17,7 @@ Types of Contributions
 
 ### Report Bugs
 
-Report bugs at <https://git.gfz.de/bnakaten/Geomodelator/issues>
+Report bugs at <https://github.com/bnakaten/geomodelator/issues>
 
 If you are reporting a bug, please include:
 
@@ -39,7 +39,7 @@ The application could always use more documentation, whether as part of the offi
 
 ### Submit Feedback
 
-The best way to send feedback is to file an issue at <https://git.gfz.de/bnakaten/Geomodelator/issues>.
+The best way to send feedback is to file an issue at <https://github.com/bnakaten/geomodelator/issues>.
 
 If you are proposing a feature:
 

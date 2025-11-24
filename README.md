@@ -12,10 +12,10 @@ SPDX-License-Identifier: CC-BY-4.0
 # GeomodelatorGUI
 
 A graphical user interface (GUI) based on python, streamlit and pyvista to use the free
-[GEOMODELATOR](https://git.gfz.de/bnakaten/geomodelator) to setup 3d geolocial models for
+[GEOMODELATOR](https://github.com/bnakaten/geomodelator) to setup 3d geolocial models for
 the simulator framework [TRANSPORTSE](https://git.gfz.de/kempka/transportse).
 
-[Visit Wiki](https://git.gfz.de/bnakaten/geomodelator/-/wikis)
+[Visit Wiki](https://github.com/bnakaten/geomodelator/wiki)
 
 ![GEOMODELATOR GUI](geomodelatorgui_logo_name.png "GEOMODELATOR GUI")
 
@@ -49,18 +49,18 @@ the simulator framework [TRANSPORTSE](https://git.gfz.de/kempka/transportse).
 1. Download **GeomodelatorGUI**.
 
     ```
-    git clone https://git.gfz.de/bnakaten/geomodelatorGUI
+    git clone https://github.com/bnakaten/geomodelatorgui
 
-    #git -c http.sslVerify=false  clone https://git.gfz.de/bnakaten/geomodelatorGUI
+    #git -c http.sslVerify=false clone https://github.com/bnakaten/geomodelatorgui
 
-    cd GeomodelatorGUI
+    cd geomodelatorgui
 
     git checkout tags/v1.0
 
     git submodule update --init --recursive
     ```
 
-2. Setup conda envrionment conda.
+2. Setup mamba/conda envrionment mamba/conda.
 
     ```
     mamba env create -f environment.yml
@@ -84,7 +84,7 @@ the simulator framework [TRANSPORTSE](https://git.gfz.de/kempka/transportse).
 
     The GeomodelatorGUI opens in the web browser.
 
-3. Further details can be found in the [GeomodelatorGUI Wiki](https://git.gfz.de/bnakaten/geomodelatorgui/-/wikis) or in the [GEOMODELATOR Wiki](https://git.gfz.de/bnakaten/geomodelator/-/wikis)
+3. Further details can be found in the [GeomodelatorGUI Wiki](https://github.com/bnakaten/geomodelatorgui/wiki) or in the [GEOMODELATOR Wiki](https://github.com/bnakaten/geomodelator/wiki)
 
 # License and Copyright
 
