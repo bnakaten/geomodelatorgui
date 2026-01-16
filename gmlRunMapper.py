@@ -12,12 +12,39 @@ from pyevtk.hl import gridToVTK
 
 import matplotlib as mpl
 import matplotlib.pyplot as plt
+from matplotlib.colors import ListedColormap
 
 import logging
 
 import importlib
 gml = importlib.import_module("geomodelator.gml")
 
+
+# tab20_distinct = ListedColormap([
+#     "#1f77b4",  # blue
+#     "#ff7f0e",  # orange
+#     "#2ca02c",  # green
+#     "#d62728",  # red
+#     "#6a3d9a",  # deep violet (kälter)
+#     "#8c564b",  # brown
+#     "#e41a1c",  # strong red
+#     "#7f7f7f",  # gray
+#     "#bcbd22",  # olive
+#     "#17becf",  # cyan
+
+#     "#003f5c",  # dark blue
+#     "#1b9e77",  # teal (replaces pink)
+#     "#e6ab02",  # mustard yellow
+#     "#fb8072",  # coral
+#     "#66a61e",  # vivid green
+#     "#a6761d",  # ochre
+#     "#7570b3",  # blue-violet (clearly separated)
+#     "#d95f02",  # dark orange
+#     "#66c2a5",  # light teal
+#     "#bdbdbd",  # light gray
+# ], name="tab20_distinct")
+
+tab20_distinct = plt.get_cmap('tab20')
 
 class gmlRunMapper():
 
@@ -83,13 +110,17 @@ class gmlRunMapper():
 
 
         layers = sortLayerList(layers)
+        faults = sortLayerList(faults)
 
         layersN = len(layers.A)
         for index, value in enumerate(faults.A):
             layers.A[layersN] = faults.A[index]
             layers.orientation[layersN] = faults.orientation[index]
-            layers.type[layersN] = faults.fileType[index]
+            layers.type[layersN] = faults.type[index]
             layersN += 1
+
+
+        # layers = sortLayerList(layers)
 
         partitioning = gml.Partitioning(cellCenterModel)
 
@@ -132,8 +163,13 @@ class gmlRunMapper():
 
         self.settings.rs['model']['partitionId'] = cellCenterModel.configuration.part
 
-        cmap = plt.get_cmap('tab20')
+
+        cmap = tab20_distinct
         colors = [mpl.colors.rgb2hex(cmap(i)) for i in range(cmap.N)]
+
+        # cmap = plt.get_cmap('tab20')
+        # colors = [mpl.colors.rgb2hex(cmap(i)) for i in range(cmap.N)]
+
         pnames = []
         pvalues = []
         pshow = []
@@ -148,7 +184,7 @@ class gmlRunMapper():
                 pnames.append(part)
                 pvalues.append(colors[i%cmap.N])
                 pshow.append(True)
-                i += 2
+                i += 1
 
         self.settings.rs['gui'] = {}
         self.settings.rs['gui']['partitionColor'] = dict(
@@ -157,8 +193,11 @@ class gmlRunMapper():
             show = pshow
         )
 
-        cmap = plt.get_cmap('tab20')
+
+        cmap = tab20_distinct
         colors = [mpl.colors.rgb2hex(cmap(i)) for i in range(cmap.N)]
+        # cmap = plt.get_cmap('tab20')
+        # colors = [mpl.colors.rgb2hex(cmap(i)) for i in range(cmap.N)]
         pnames = []
         pvalues = []
         pshow = []
@@ -168,7 +207,7 @@ class gmlRunMapper():
             pnames.append(part.split('.')[0])
             pvalues.append(colors[(i+10)%cmap.N])
             pshow.append(True)
-            i += 2
+            i += 1
 
         self.settings.rs['gui']['surfaceColor'] = dict(
             surface = pnames,
