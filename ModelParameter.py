@@ -271,6 +271,7 @@ class ModelParameter:
                 column_config={
                     "Name": st.column_config.Column(disabled=True),
                     "Color": None,
+                    "Width (m)":  st.column_config.NumberColumn(format="%.2f"),
                 },
                 hide_index=True
             )
