@@ -26,7 +26,18 @@ class Globals():
         'nextButton' : 'Next',
         'backButton' : 'Back',
         'startButton' : 'Start',
-        'demoButton' : 'Demo',
+        'demos' : {
+            'demo-1' : 
+                ['static/demo-1/', 'Demo 1', 'images/demo-1.png'],
+            'demo-2' : 
+                ['static/demo-2/', 'Demo 2', 'images/demo-2.png'],
+            'demo-3' : 
+                ['static/demo-3/', 'Demo 3', 'images/demo-3.png'],
+            'demo-4' : 
+                ['static/demo-4/', 'Demo 4', 'images/demo-4.png'],
+            'demo-5' : 
+                ['static/demo-5/', 'Demo 5', 'images/demo-5.png'],
+        },
         'customButton' : 'Custom',
         'resetButton' : 'Reset',
         'runButton' : 'Update model',
@@ -169,9 +180,9 @@ class Globals():
             'descriptionLable' : 'Wireframe',
             'default' : True,
         },
-        'modelHide' : {
+        'modelShow' : {
             'descriptionLable' : 'Model',
-            'default' : False,
+            'default' : True,
         },
         'partitionTable' : {
             'columnNames' :  ['Partition', 'Id', 'Color']
@@ -191,9 +202,9 @@ class Globals():
             'descriptionLable' : 'Wireframe',
             'default' : False,
         },
-        'surfaceHide' : {
-            'descriptionLable' : 'Structure',
-            'default' : False,
+        'surfaceShow' : {
+            'descriptionLable' : 'Structures',
+            'default' : True,
         },
         'backgroundColor' :{
             'descriptionLable' : 'Background',

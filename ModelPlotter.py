@@ -10,6 +10,7 @@ import streamlit as st
 import pyvista
 from stpyvista import stpyvista
 
+
 from stpyvista.utils import start_xvfb
 if "IS_XVFB_RUNNING" not in st.session_state:
   start_xvfb()
@@ -35,7 +36,7 @@ class ModelPlotter:
                 self.plotter = pyvista.Plotter(window_size = [
                     globals.ModelPlotter['width'],
                     globals.ModelPlotter['height']
-                ])
+                ], off_screen=True)
 
                 self.plotter.set_background(st.session_state.plottercolor)
 
@@ -140,10 +141,10 @@ class ModelPlotter:
 
         mesh = mesh.scale([1,1,st.session_state.zscale])
 
-        if st.session_state.hide_structure:
-            structureOpacity = 0
-        else:
+        if st.session_state.show_surface:
             structureOpacity = st.session_state.structure_opacity
+        else:
+            structureOpacity = 0
 
         return mesh, structureOpacity
 
@@ -196,10 +197,10 @@ class ModelPlotter:
 
                     i += 1
 
-        if st.session_state.hide_model:
-            modelOpacity = 0
-        else:
+        if st.session_state.show_model:
             modelOpacity = st.session_state.model_opacity
+        else:
+            modelOpacity = 0
 
         return mesh, modelOpacity
 

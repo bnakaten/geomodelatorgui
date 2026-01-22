@@ -37,11 +37,12 @@ class ViewManager:
             st.session_state.model_wireframe_opacity = \
                 self.gb.viewControl['modelWireframe']['default']
 
-        if 'hide_model' not in st.session_state:
-            st.session_state.hide_model = self.gb.viewControl['modelHide']['default']
+        if 'show_model' not in st.session_state:
+            st.session_state.show_model = self.gb.viewControl['modelShow']['default']
 
         if 'show_surfaces' not in st.session_state:
             st.session_state.show_surfaces = 'all'
+
 
         if 'surfaceColor' not in st.session_state:
             st.session_state.surfaceColor = ""
@@ -54,9 +55,10 @@ class ViewManager:
             st.session_state.structure_wireframe_opacity = \
                 self.gb.viewControl['surfaceWireframe']['default']
 
-        if 'hide_structure' not in st.session_state:
-            st.session_state.hide_structure = \
-                self.gb.viewControl['surfaceHide']['default']
+        if 'show_surface' not in st.session_state:
+            st.session_state.show_surface = \
+                self.gb.viewControl['surfaceShow']['default']
+
 
         if 'plottercolor' not in st.session_state:
             st.session_state.plottercolor = \
@@ -105,8 +107,8 @@ class ViewManager:
             )
 
             c2.toggle(
-                self.gb.viewControl['modelHide']['descriptionLable'],
-                key = 'hide_model'
+                self.gb.viewControl['modelShow']['descriptionLable'],
+                key = 'show_model'
             )
         else:
             st.session_state.partitionColor_e = False
@@ -143,9 +145,10 @@ class ViewManager:
                 key = 'structure_wireframe_opacity'
             )
 
+            print(self.gb.viewControl['surfaceShow']['descriptionLable'])
             c4.toggle(
-                self.gb.viewControl['surfaceHide']['descriptionLable'],
-                key = 'hide_structure'
+                self.gb.viewControl['surfaceShow']['descriptionLable'],
+                key = 'show_surface'
             )
         else:
             st.session_state.surfaceColor_e = False

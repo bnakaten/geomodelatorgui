@@ -71,54 +71,58 @@ class Wizard():
 
         disableBackButton = True if st.session_state.wizardSteps == 0 else False
 
-        st.divider()
-        formFooterCols = st.columns([3,2,2,2,2], gap="small", vertical_alignment="bottom")
+        formFooterCols = st.columns([3,2,2,2,2,2,2,2,2], gap="small", vertical_alignment="bottom")
+
+        # demo_labels = list(globals.wizard['demos'].keys())
+        demo_labels =  [demo[1] for demo in globals.wizard['demos'].values()]
+        demo_image_paths = [demo[2] for demo in globals.wizard['demos'].values()]
+
+        if "selected_image" not in st.session_state:
+            st.session_state.selected_image = None
+
+        cols = st.columns(len(demo_image_paths))
+
+        for i, (col, img_path) in enumerate(zip(cols, demo_image_paths)):
+            with col:
+                formFooterCols[i+1].image(Image.open(img_path), width=60)
+                formFooterCols[i+1].button(demo_labels[i], key=f"demo-{i+1}", args=(i+1,), on_click=self.btnDemoRun)
 
         logo = Image.open(st.session_state.GLOBALS.default['logo'])
         formFooterCols[0].image(logo, width=150)
 
+
         resetBtn = False
 
         if st.session_state.wizardSteps == 0:
-            formFooterCols[2].button(
-                globals.wizard['demoButton'], on_click=self.btnDemoRun
-            )
-            formFooterCols[3].button(
+
+            formFooterCols[-1].button(
                 globals.wizard['customButton'], on_click=steps.setStep, args=['Next']
             )
         elif st.session_state.wizardSteps < self.numberOfSteps:
-            # resetBtn = formFooterCols[1].button(
-            #     globals.wizard['resetButton'],
-            #     on_click=self.btnReset
-            # )
-            formFooterCols[2].button(
+            formFooterCols[-3].button(
                 globals.wizard['backButton'],
                 on_click=steps.setStep,
                 args=['Back'],
                 disabled=disableBackButton
             )
-            formFooterCols[3].button(
+            formFooterCols[-2].button(
                 globals.wizard['nextButton'],
                 on_click=steps.setStep,
                 args=['Next']
             )
-            formFooterCols[4].button(
+            formFooterCols[-1].button(
                 globals.wizard['runButton'],
                 on_click=st.session_state.handler.btnApiGmlRun,
                 type="primary"
             )
         else:
-            # resetBtn = formFooterCols[1].button(
-            #     globals.wizard['resetButton'],
-            #     on_click=self.btnReset
-            # )
-            formFooterCols[2].button(
+            formFooterCols[-3].button(
                 globals.wizard['backButton'],
                 on_click=steps.setStep,
                 args=['Back'],
                 disabled=disableBackButton
             )
-            formFooterCols[3].button(
+            formFooterCols[-1].button(
                 globals.wizard['runButton'],
                 on_click=st.session_state.handler.btnApiGmlRun,
                 type="primary"
@@ -136,9 +140,10 @@ class Wizard():
         )
         st.session_state.handler.tearDown()
 
-    def btnDemoRun(self) -> None:
+    def btnDemoRun(self, demoIdx) -> None:
+        demoKey = f"demo-{demoIdx}"
         st.session_state.useDemoModel = True
-        st.session_state.handler.loadDemoModel()
+        st.session_state.handler.loadDemoModel(demo=demoKey)
         st.session_state.btnApiGmlRun = True
         st.session_state.wizardWindow = False
 
@@ -619,13 +624,11 @@ class SetStructureWidth(WizardPage):
         st.session_state.structureWidth['Width'] = \
             st.session_state.structureWidth['Width'].astype(float)
 
-
-        st.session_state.structureWidth.rename(columns={'Width' : 'Width (m)'}, inplace = True)
-
         st.session_state.structureWidthE = formSubDetailsA.data_editor(
             st.session_state.structureWidth,
             column_config={
                 "Name": st.column_config.Column(disabled=True),
+                "Width" : "Width (m)",
                 "color": None,
             },
             hide_index = True,
@@ -641,7 +644,7 @@ class SetStructureWidth(WizardPage):
             st.session_state.configuration['model']['structureWidth'] = dict(
                 zip(
                     st.session_state.structureWidthE['Name'],
-                    st.session_state.structureWidthE['Width (m)']
+                    st.session_state.structureWidthE['Width']
                 )
             )
             self.btnConfigSave()

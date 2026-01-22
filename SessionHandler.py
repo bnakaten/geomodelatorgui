@@ -60,11 +60,11 @@ class SessionHandler:
             st.session_state.stateApiGmlRun = False
 
         if 'useDemoModel' not in st.session_state:
-            st.session_stateuseDemoModel = True
-            self.loadDemoModel()
+            st.session_state.useDemoModel = True
+            self.loadDemoModel(demo="demo-1")
 
         if "configuration" not in st.session_state:
-            self.loadConfiguration()
+            self.loadConfiguration(sourceType="defaultPath")
 
         if "apiSession" not in st.session_state:
             st.session_state.apiSession = apiSession
@@ -181,6 +181,7 @@ class SessionHandler:
             jsonFilename = \
                 self.globals.default['uploadPath'] + \
                 self.globals.default['configurationFileName'] + '.json'
+            print(jsonFilename)
 
             if extension == 'yaml':
                 with open(configurationFilesFilename, 'r') as fileHandle:
@@ -206,7 +207,10 @@ class SessionHandler:
             os.makedirs(directoryPath)
 
 
-    def loadDemoModel(self):
+    def loadDemoModel(self, demo=False):
+        if demo != False:
+            self.globals.default['defaultPath'] = self.globals.wizard['demos'][demo][0]
+
         st.session_state.stateApiGmlConfigure = False
 
         self.ensureDirectoryExists(self.globals.default['uploadPath'])
@@ -220,7 +224,7 @@ class SessionHandler:
             onlyFilesWithExtension
         )
 
-        self.loadConfiguration()
+        self.loadConfiguration(sourceType=self.globals.default['defaultPath'])
 
         st.session_state.configuration['config']['base'] = \
             self.globals.default['uploadPath']
